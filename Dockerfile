@@ -17,9 +17,6 @@ RUN npm install -g http-server
 
 VOLUME /home
 
-RUN mkdir -p /home/new/
-WORKDIR /home/new/ 
-
 RUN ng new aplicacao
 
 RUN apt-get clean && apt-get autoclean && apt-get autoremove \
