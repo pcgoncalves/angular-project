@@ -17,7 +17,9 @@ RUN npm install -g http-server
 
 VOLUME /home
 
-RUN ng new aplicacao
+RUN mkdir -p /esqueleto/
+
+RUN ng new /esqueleto/aplicacao
 
 RUN apt-get clean && apt-get autoclean && apt-get autoremove \
 && rm -rf /var/lib/apt/lists/*
