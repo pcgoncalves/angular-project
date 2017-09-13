@@ -22,6 +22,7 @@ WORKDIR /angular-project/
 
 RUN ng new projeto
 
+WORKDIR /angular-project/projeto
 RUN npm install materialize-css --save
 
 RUN apt-get clean && apt-get autoclean && apt-get autoremove \
