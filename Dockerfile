@@ -1,15 +1,11 @@
-FROM ubuntu 
+FROM node:6.11.2-alpine 
 
 LABEL maintainer="Paulo Cesar Gonçalves <pcgoncalvess@gmail.com>"
 
-RUN apt-get update && apt-get install -y \
-curl \
-nano
-
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get install -y \
-nodejs \
-build-essential
-
-RUN npm install -g @angular/cli@latest 
-
+RUN apk update \ 
+	&& apk add --update alpine-sdk \ 
+	&& npm install -g @angular/cli@1.4.8 \ 
+	&& ng set --global packageManager=yarn \ 
+	&& apk del alpine-sdk \ 
+	&& rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \ 
+	&& npm cache clear \
