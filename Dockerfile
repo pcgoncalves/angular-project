@@ -11,3 +11,7 @@ RUN apk update \
 	&& rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \ 
 	&& npm cache clear \
 
+VOLUME /home
+
+EXPOSE 4200
+
