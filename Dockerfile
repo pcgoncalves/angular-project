@@ -11,9 +11,6 @@ RUN apt-get update && apt-get install -y \
 nodejs \
 build-essential
 
-RUN npm install -g typescript@latest
-RUN npm install -g @angular/cli@latest
-
 VOLUME /home
 
 WORKDIR /home
